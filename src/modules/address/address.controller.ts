@@ -5,8 +5,9 @@ import { AddressService } from './address.service';
 @Controller('address')
 export class AddressController {
     constructor(private addressServices: AddressService) {}
-
-    @Post()
+    
+    // http://localhost:3000/address [POST] { "address": "AV. real" }
+    @Post()  
     async create(@Body() address: Address) {
         return await this.addressServices.create(address);
     }
